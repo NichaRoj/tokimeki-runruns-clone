@@ -8,8 +8,12 @@ default_color = Color( 1, 0.188235, 0.188235, 1 )
 script = ExtResource( 1 )
 
 [node name="LifeTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
 
 [node name="ThanosTimer" type="Timer" parent="."]
 wait_time = 0.05
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="Area" type="Area2D" parent="."]

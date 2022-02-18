@@ -2,11 +2,11 @@ extends RigidBody2D
 
 onready var _animated_sprite = $AnimatedSprite
 var is_touching_floor = true
-var NYOOM_RANGE = 50
+var NYOOM_RANGE = 100
 
 func _ready():
 	_animated_sprite.play("default")
-	set_bounce(1)
+	bounce = 0.2
 	friction = 0
 	
 func _integrate_forces(state):
@@ -20,3 +20,4 @@ func _integrate_forces(state):
 	
 func set_touching_floor(b):
 	is_touching_floor = b
+	print("Touching", b)
