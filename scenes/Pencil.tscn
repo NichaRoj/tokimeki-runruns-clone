@@ -15,5 +15,7 @@ one_shot = true
 wait_time = 0.05
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="Area" type="Area2D" parent="."]
+collision_layer = 2

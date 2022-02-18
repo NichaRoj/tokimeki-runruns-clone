@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/StartPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/CameraControl.gd" type="Script" id=3]
 [ext_resource path="res://maps/Canvas.gd" type="Script" id=4]
+[ext_resource path="res://scenes/FanBall.tscn" type="PackedScene" id=5]
 
 [node name="FirstMap" type="Node2D"]
 script = ExtResource( 4 )
@@ -16,3 +17,18 @@ current = true
 script = ExtResource( 3 )
 
 [node name="StartPlatform" parent="." instance=ExtResource( 2 )]
+
+[node name="FanBall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584, -64 )
+
+[node name="FanBall2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584, -88 )
+
+[node name="FanBall4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584, -136 )
+
+[node name="FanBall5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584, -160 )
+
+[node name="FanBall3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584, -112 )

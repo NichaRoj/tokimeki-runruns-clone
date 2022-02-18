@@ -10,6 +10,7 @@ extents = Vector2( 80, 8 )
 extents = Vector2( 80, 12 )
 
 [node name="StartPlatform" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
