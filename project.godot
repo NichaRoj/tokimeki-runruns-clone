@@ -36,6 +36,13 @@ draw={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="fan"
+2d_physics/layer_3="platform"
+2d_physics/layer_4="floor"
+
 [physics]
 
 common/enable_pause_aware_picking=true

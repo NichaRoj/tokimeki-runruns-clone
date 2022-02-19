@@ -3,8 +3,8 @@ extends Line2D
 var is_released = false
 
 func _ready():
-	$Area.connect("body_entered", self, "_body_entered")
-	$Area.connect("body_exited", self, "_body_exited")
+	$Area.connect("body_entered", self, "_on_body_entered")
+	$Area.connect("body_exited", self, "_on_body_exited")
 	$LifeTimer.connect("timeout", self, "_on_life_timeout")
 	$ThanosTimer.connect("timeout", self, "_on_thanos_timeout")
 	# The countdown starts right away cuz of-effing-course

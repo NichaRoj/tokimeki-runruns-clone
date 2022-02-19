@@ -2,22 +2,30 @@ extends RigidBody2D
 
 onready var _animated_sprite = $AnimatedSprite
 var is_touching_floor = true
-var NYOOM_RANGE = 100
+var is_touching_bottom = false
+var NYOOM_RANGE = 450
 
 func _ready():
 	_animated_sprite.play("default")
-	bounce = 0.2
-	friction = 0
 	
 func _integrate_forces(state):
-	# prevent shaking
-	if state.angular_velocity < 1 and state.angular_velocity > -1:
+	# slow down at the bottom
+	if is_touching_bottom:
+		state.linear_velocity = Vector2(200, 0)
 		state.angular_velocity = 0
+		rotation = 0
+		return
+	
+	# prevent leaning
+	if rotation < 0:
+		state.apply_torque_impulse(1000)
 	
 	# nyooom when touching the ground
-	if is_touching_floor and state.linear_velocity.x < NYOOM_RANGE and state.linear_velocity.x > -1 * NYOOM_RANGE and state.linear_velocity.y < NYOOM_RANGE and state.linear_velocity.y > -1 * NYOOM_RANGE:
-		set_linear_velocity(Vector2(500, 0))
-	
+	if is_touching_floor and state.linear_velocity.x < NYOOM_RANGE:
+		state.apply_impulse(Vector2.UP * 10, Vector2(100, 100 * rotation))
+
 func set_touching_floor(b):
 	is_touching_floor = b
-	print("Touching", b)
+
+func set_touching_bottom(b):
+	is_touching_bottom = b
