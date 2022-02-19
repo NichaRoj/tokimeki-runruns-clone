@@ -7,5 +7,5 @@ func _process(delta):
 	if Input.is_action_just_pressed("draw"):
 		var pencil = preload("res://scenes/Pencil.tscn").instance()
 		pencil.default_color = pencil_colors[posmod(pencil_color_tracker, 3)]
-		add_child(pencil)
+		call_deferred("add_child", pencil)
 		pencil_color_tracker += 1

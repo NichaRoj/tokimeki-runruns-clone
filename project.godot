@@ -24,6 +24,10 @@ config/name="tokimeki-runruns-clone"
 run/main_scene="res://maps/FirstMap.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://GlobalVariables.gd"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
