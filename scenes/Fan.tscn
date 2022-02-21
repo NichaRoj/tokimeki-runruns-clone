@@ -13,6 +13,11 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "resting",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "running",
@@ -22,14 +27,9 @@ animations = [ {
 "loop": true,
 "name": "jumping",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "resting",
-"speed": 5.0
 } ]
 
-[node name="Fan" type="RigidBody2D" groups=["Human"]]
+[node name="Fan" type="RigidBody2D" groups=["Fan", "Human"]]
 collision_layer = 2
 collision_mask = 4
 mass = 10.0

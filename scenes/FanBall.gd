@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var global = get_node("/root/GlobalVariables")
 var fan
 
 func _ready():
@@ -11,3 +12,4 @@ func _on_body_entered(body):
 		$Fan.sleeping = false
 		$Sprite.visible = false
 		$CollisionShape2D.visible = false
+		global.inc_running_fans()

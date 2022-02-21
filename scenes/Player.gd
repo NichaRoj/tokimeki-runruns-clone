@@ -8,6 +8,10 @@ var NYOOM_RANGE = 450
 func _ready():
 	_animated_sprite.play("default")
 	
+func _process(_delta):
+	if not visible:
+		sleeping = true
+	
 func _integrate_forces(state):
 	# slow down at the bottom
 	if is_touching_bottom:

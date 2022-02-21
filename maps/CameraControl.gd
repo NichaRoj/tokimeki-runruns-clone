@@ -1,9 +1,11 @@
 extends Camera2D
 
+onready var goal = get_node("../Goal")
 onready var player = get_node("../Player")
 onready var btn_continue = $Menu/PanelContainer/VBoxContainer/Continue
 onready var btn_restart = $Menu/PanelContainer/VBoxContainer/Restart
 onready var btn_back = $Menu/PanelContainer/VBoxContainer/Back
+
 var current_position
 
 func _ready():
@@ -12,7 +14,7 @@ func _ready():
 	btn_back.connect("pressed", self, "_on_back_pressed")
 
 func _process(delta):
-	if position.x < player.position.x:
+	if position.x < player.position.x and position.x < goal.position.x:
 		position.x = player.position.x
 
 func _input(event):
