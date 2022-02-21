@@ -5,6 +5,9 @@ var running_fans = 0
 var fallen_fans = 0
 var collected_fans = 0
 
+func _ready():
+	all_fans = get_tree().get_nodes_in_group("Fan").size()
+
 func set_all_fans(n):
 	all_fans = n
 	print('all_fans', all_fans)
@@ -22,7 +25,7 @@ func inc_collected_fans():
 	print('collected_fans', collected_fans)
 	
 func reset_fan_count():
-	all_fans = 0
+	all_fans = get_tree().get_nodes_in_group("Fan").size()
 	running_fans = 0
 	fallen_fans = 0
 	collected_fans = 0

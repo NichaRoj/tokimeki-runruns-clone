@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://maps/CameraControl.gd" type="Script" id=1]
+[ext_resource path="res://assets/GreenProgress.png" type="Texture" id=2]
+[ext_resource path="res://assets/BlueProgress.png" type="Texture" id=3]
+[ext_resource path="res://assets/ProgressBarFrame.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ProgressBar.gd" type="Script" id=5]
 
 [node name="Camera" type="Camera2D"]
 pause_mode = 2
@@ -65,3 +69,36 @@ margin_top = 207.0
 margin_right = 186.0
 margin_bottom = 227.0
 text = "Back To Map"
+
+[node name="ProgressBar" type="Control" parent="."]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenBar" type="TextureProgress" parent="ProgressBar"]
+margin_left = -496.0
+margin_top = -280.0
+margin_right = -96.0
+margin_bottom = -240.0
+value = 10.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+texture_progress_offset = Vector2( 5, 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueBar" type="TextureProgress" parent="ProgressBar"]
+margin_left = -496.0
+margin_top = -280.0
+margin_right = -96.0
+margin_bottom = -240.0
+value = 5.0
+texture_progress = ExtResource( 3 )
+texture_progress_offset = Vector2( 5, 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

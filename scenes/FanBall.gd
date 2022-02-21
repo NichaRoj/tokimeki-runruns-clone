@@ -11,5 +11,5 @@ func _on_body_entered(body):
 		$Fan.visible = true
 		$Fan.sleeping = false
 		$Sprite.visible = false
-		$CollisionShape2D.visible = false
+		remove_child($Collision)
 		global.inc_running_fans()
