@@ -22,7 +22,11 @@ func _on_life_timeout():
 	$ThanosTimer.start()
 	
 func _on_thanos_timeout():
-	if points.size() > 0:
+	if points.size() > 1:
+		remove_point(0)
+		$Collisions.remove_child($Collisions.get_children()[0])
+		$Area.remove_child($Area.get_children()[0])
+	elif points.size() > 0:
 		remove_point(0)
 	else:
 		$ThanosTimer.stop()
