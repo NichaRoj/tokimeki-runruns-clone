@@ -4,6 +4,7 @@ onready var global = get_node("/root/GlobalVariables")
 onready var _animated_sprite = $AnimatedSprite
 var is_touching_floor = true
 var is_touching_bottom = false
+var has_passed_goal = false
 var NYOOM_RANGE = 450
 
 func _ready():
@@ -25,5 +26,9 @@ func set_touching_bottom(b):
 	is_touching_bottom = b
 
 func out_of_bound():
-	global.inc_fallen_fans()
+	if not has_passed_goal:
+		global.inc_fallen_fans()
 	sleeping = true
+
+func set_passed_goal(b):
+	has_passed_goal = true

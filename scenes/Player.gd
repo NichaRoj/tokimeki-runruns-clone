@@ -3,6 +3,7 @@ extends RigidBody2D
 onready var _animated_sprite = $AnimatedSprite
 var is_touching_floor = true
 var is_touching_bottom = false
+var has_passed_goal = false
 var NYOOM_RANGE = 450
 
 func _ready():
@@ -33,3 +34,6 @@ func set_touching_floor(b):
 
 func set_touching_bottom(b):
 	is_touching_bottom = b
+
+func set_passed_goal(b):
+	has_passed_goal = true

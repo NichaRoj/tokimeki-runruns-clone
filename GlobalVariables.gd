@@ -1,9 +1,9 @@
 extends Node
 
-var all_fans = 0
-var running_fans = 0
-var fallen_fans = 0
-var collected_fans = 0
+var all_fans = -100
+var running_fans = -50
+var fallen_fans = -20
+var collected_fans = -10
 
 func _ready():
 	all_fans = get_tree().get_nodes_in_group("Fan").size()

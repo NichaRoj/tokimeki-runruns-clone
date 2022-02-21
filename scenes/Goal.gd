@@ -8,3 +8,6 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("Fan"):
 		global.inc_collected_fans()
+		body.set_passed_goal(true)
+	elif body.name == "Player":
+		body.set_passed_goal(true)
