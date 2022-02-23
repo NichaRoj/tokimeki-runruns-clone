@@ -6,7 +6,7 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	
 func _on_body_entered(body):
-	if body.is_in_group("Fan"):
+	if body.is_in_group("Fan") and not body.has_passed_goal:
 		global.inc_collected_fans()
 		body.set_passed_goal(true)
 	elif body.name == "Player":
