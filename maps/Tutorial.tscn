@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://maps/Tutorial.gd" type="Script" id=1]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
+[node name="Page1" type="Control" parent="."]
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 1024, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Page1"]
+margin_left = 488.0
+margin_top = 292.0
+margin_right = 536.0
+margin_bottom = 306.0
+text = "Tutorial"
+
+[node name="StartButton" type="Button" parent="Page1"]
+margin_left = 488.0
+margin_top = 332.0
+margin_right = 571.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 100, 50 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page2" type="Control" parent="."]
+margin_left = 512.0
+margin_top = -300.0
+margin_right = 1536.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 1024, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

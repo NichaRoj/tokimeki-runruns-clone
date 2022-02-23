@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://maps/PortalButton.gd" type="Script" id=1]
+[ext_resource path="res://maps/Back.gd" type="Script" id=2]
+
+[node name="WorldMap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
+[node name="FirstMap" type="Button" parent="." groups=["Portal"]]
+margin_right = 67.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 100 )
+text = "FirstMap"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = -480.0
+margin_top = -280.0
+margin_right = -430.0
+margin_bottom = -230.0
+rect_min_size = Vector2( 50, 50 )
+text = "Back"
+script = ExtResource( 2 )
