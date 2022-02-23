@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/StartPlatform.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://maps/Map.gd" type="Script" id=8]
 [ext_resource path="res://scenes/RestBall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/StarBall.tscn" type="PackedScene" id=10]
 
 [node name="FirstMap" type="Node2D"]
 script = ExtResource( 8 )
@@ -29,6 +30,17 @@ position = Vector2( 888, 0 )
 [node name="RestBall2" parent="Rest" instance=ExtResource( 9 )]
 position = Vector2( 888, 40 )
 
+[node name="Star" type="Node2D" parent="."]
+
+[node name="StarBall" parent="Star" instance=ExtResource( 10 )]
+position = Vector2( 224, 0 )
+
+[node name="StarBall2" parent="Star" instance=ExtResource( 10 )]
+position = Vector2( 1768, 0 )
+
+[node name="StarBall3" parent="Star" instance=ExtResource( 10 )]
+position = Vector2( 624, -64 )
+
 [node name="Fans" type="Node2D" parent="."]
 
 [node name="FanBall" parent="Fans" instance=ExtResource( 5 )]
@@ -45,6 +57,21 @@ position = Vector2( 584, -160 )
 
 [node name="FanBall3" parent="Fans" instance=ExtResource( 5 )]
 position = Vector2( 584, -96 )
+
+[node name="FanBall6" parent="Fans" instance=ExtResource( 5 )]
+position = Vector2( 1160, -32 )
+
+[node name="FanBall7" parent="Fans" instance=ExtResource( 5 )]
+position = Vector2( 1160, -64 )
+
+[node name="FanBall8" parent="Fans" instance=ExtResource( 5 )]
+position = Vector2( 1160, -128 )
+
+[node name="FanBall9" parent="Fans" instance=ExtResource( 5 )]
+position = Vector2( 1160, -160 )
+
+[node name="FanBall10" parent="Fans" instance=ExtResource( 5 )]
+position = Vector2( 1160, -96 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 gravity_scale = 5.0
