@@ -18,14 +18,14 @@ animations = [ {
 "name": "running",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "jumping",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "resting",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "falling",
 "speed": 5.0
 } ]
 
@@ -36,13 +36,14 @@ mass = 10.0
 gravity_scale = 5.0
 sleeping = true
 linear_damp = 0.0
-angular_damp = 50.0
+angular_damp = 100.0
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -25 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 1 )
+animation = "falling"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.45058e-09, 0 )

@@ -26,6 +26,12 @@ func _integrate_forces(state):
 			$RestInvulTimer.start()
 		
 		return
+		
+	# use falling animation
+	if not is_touching_floor:
+		$AnimatedSprite.play("falling")
+	else:
+		$AnimatedSprite.play("default")
 	
 	# prevent leaning
 	if rotation < 0:

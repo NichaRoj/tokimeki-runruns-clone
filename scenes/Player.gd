@@ -37,6 +37,12 @@ func _integrate_forces(state):
 		rotation = 0
 		return
 	
+	# use falling animation
+	if not is_touching_floor:
+		$AnimatedSprite.play("falling")
+	else:
+		$AnimatedSprite.play("default")
+		
 	# prevent leaning
 	if rotation < 0:
 		state.apply_torque_impulse(1000)
