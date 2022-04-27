@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/StartPlatform.tscn" type="PackedScene" id=2]
@@ -9,10 +9,19 @@
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://maps/Map.gd" type="Script" id=8]
 [ext_resource path="res://scenes/RestBall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/StarBall.tscn" type="PackedScene" id=10]
 
 [node name="FirstMap" type="Node2D"]
 script = ExtResource( 8 )
+
+[node name="WhiteBackground" type="ColorRect" parent="."]
+margin_left = -520.0
+margin_top = -312.0
+margin_right = 2952.0
+margin_bottom = 304.0
+color = Color( 0.737255, 0.839216, 0.901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartPlatform" parent="." instance=ExtResource( 2 )]
 
@@ -25,21 +34,10 @@ position = Vector2( 1480, -312 )
 [node name="Rest" type="Node2D" parent="."]
 
 [node name="RestBall" parent="Rest" instance=ExtResource( 9 )]
-position = Vector2( 888, 0 )
+position = Vector2( 328, -8 )
 
 [node name="RestBall2" parent="Rest" instance=ExtResource( 9 )]
-position = Vector2( 888, 40 )
-
-[node name="Star" type="Node2D" parent="."]
-
-[node name="StarBall" parent="Star" instance=ExtResource( 10 )]
-position = Vector2( 224, 0 )
-
-[node name="StarBall2" parent="Star" instance=ExtResource( 10 )]
-position = Vector2( 1768, 0 )
-
-[node name="StarBall3" parent="Star" instance=ExtResource( 10 )]
-position = Vector2( 624, -64 )
+position = Vector2( 328, 32 )
 
 [node name="Fans" type="Node2D" parent="."]
 
